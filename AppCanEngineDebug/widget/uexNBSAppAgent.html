@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no" /><link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>腾讯微博功能</title>
+	<script type="text/javascript">
+    	var opId='1';
+		window.uexOnload = function(){
+			startNBSAppAgent();
+		}
+    
+	     function startNBSAppAgent(){
+	     	//var key="64d44525bd8247ca96c6378f754ec307";
+	     	//var key='ec64076fba7c4616a794e19e596490eb';
+			var key='4c82a61efdd947eda9e013d76b785e57';//正大天晴帐号：测试
+	     	uexNBSAppAgent.startNBSAppAgent(key);
+			console.log("nbskey: "+key);
+	     }
+		 
+		 function openNewWindow(){
+	     	uexWindow.open('dd', '0', 'uexEMM.html', 1, '', '', 0, 500);
+			console.log("openNewWindow");
+	     }
+
+	</script>
+</head>
+
+<body>
+	<div class="tit">信息中心</div>
+	<div   class="conbor" id="conbor">
+		<div class="consj">
+			 
+			 <a href = "http://www.baidu.com">进入百度页面</a>
+			 <a href = "uexPDFReader.html">uexPDFReader</a>
+			 
+			 <input class="btn" type="button" value="打开新窗口" onclick="openNewWindow();">
+			 	
+		</div>
+	</div>
+</body>
+</html>

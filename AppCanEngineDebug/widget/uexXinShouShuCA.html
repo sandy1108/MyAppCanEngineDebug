@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/zy_control.js">
+    </script>
+    <script src="js/zy_click.js">
+    </script>
+    <script type="text/javascript">
+		
+	window.uexOnload = function(){
+		uexXinShouShuCA.cbInit = function(opCode, dataType, data) {
+			alert(opCode+"Path:" + data);
+		}
+		uexXinShouShuCA.cbCleanSignImage = function(opCode, dataType, data) {
+			alert(opCode+"DeletePath:" + data);
+		}
+		uexXinShouShuCA.cbGetUploadDataGram = function(opCode, dataType, data) {
+			alert(opCode+"GetUploadDataGramPath:" + data);
+		}
+		uexXinShouShuCA.cbSign = function(opCode, dataType, data) {
+			alert(opCode+"Path:" + data);
+			uexXinShouShuCA.getUploadDataGram();
+		}
+		uexXinShouShuCA.cbError = function(opCode, dataType, data) {
+			alert(opCode+"Path:" + data);
+		}
+		uexXinShouShuCA.cbOutLog = function(opCode, dataType, data) {
+			alert(opCode+"status:" + data);
+		}
+		//uexXinShouShuCA.cbPath = function(opCode, dataType, data) {
+		//	alert(opCode+"Path:" + data);
+		//}
+		//uexXinShouShuCA.cbMultiSign = function(opCode, dataType, data) {
+		//	alert(opCode+"Path:" + data);
+		//}
+	}
+
+
+	
+	function init(){
+	//var data ='{"sign":"1","multiSign":"0","channel":"88888888","templateData":"json","businessId":"123","configName":"100002","proposer":"申请人","single_height":75,"single_width":180,"appntName":"test","keyword":"keyword","commitment":"解决","mass_word_width":50,"mass_word_height":50,"mass_words_in_single_line":26}';
+	//var data ='{"sign":"1","multiSign":"0","commitment":"解决","channel":"8060000000023138","templateData":"100031","businessId":"8060000000023138","configName":"100031","proposer":"申请人","single_height":400,"single_width":400,"appntName":"人的名字","keyword":"keyword","mass_word_width":400,"mass_word_height":400,"mass_words_in_single_line":26}';
+	//var data ='{"sign":"1","multiSign":"0","commitment":"基金","channel":"1","templateData":"100031","businessId":"8060000000023138","configName":"100031","proposer":"申请人","single_height":400,"single_width":400,"appntName":"基金","keyword":"keyword","mass_word_width":400,"mass_word_height":400,"mass_words_in_single_line":26}';
+	var data ='{"sign":"1","multiSign":"0","commitment":"潘留洋","channel":"1","templateData":"100031","businessId":"8060000000023218","configName":"100031","proposer":"申请人","single_height":400,"single_width":400,"appntName":"潘留洋","keyword":"keyword","mass_word_width":400,"mass_word_height":400,"mass_words_in_single_line":26}';
+	//var data ='{"sign":"0","multiSign":"1","channel":"88888888","templateData":"djfiawejfi","businessId":"123","configName":"100002","proposer":"申请人","single_height":75,"single_width":180,"appntName":"test","keyword":"keyword","mass_word_width":50,"mass_word_height":50,"mass_words_in_single_line":26}';
+	uexXinShouShuCA.init(data);
+	}
+	function cleanSignImage(){
+	var path ='/data/data/org.zywx.wbpalmstar.widgetone.uexxinshoushuca/files/xsh';
+	uexXinShouShuCA.cleanSignImage(path);
+	}
+		</script>
+  </head>
+<body class="um-vp " ontouchstart>
+    <div class="tit">XinShouShuCA</div>
+	<div class="conbor">
+
+		<div class="consj">
+
+			<span>1.初始化</span>
+
+			<input class="btn" type="button" value="init" onclick="init()">
+
+			<span>2.调用CA 单字规则签名</span>
+
+			<input class="btn" type="button" value="sign()" onclick="uexXinShouShuCA.sign()">
+
+			<span>4.调用CA 多字规则签名</span>
+
+			<input class="btn" type="button" value="mutilSign()" onclick="uexXinShouShuCA.multiSign()">
+
+			<span>5.获取加密报文</span>
+
+			<input class="btn" type="button" value="getUploadDataGram()" onclick="uexXinShouShuCA.getUploadDataGram()">
+
+			<span>6.删除数据</span>
+
+			<input class="btn" type="button" value="cleanSignImage +" onclick="cleanSignImage()">
+
+			<span>7.输出日志</span>
+
+			<input class="btn" type="button" value="outLog +" onclick="uexXinShouShuCA.outLog()">
+			<span>7.回收接口</span>
+
+			<input class="btn" type="button" value="close" onclick="uexXinShouShuCA.close()">
+		</div>
+
+	</div>
+</body>
+<script>
+
+</script>
+</html>

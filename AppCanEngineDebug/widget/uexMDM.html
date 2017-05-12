@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<script type="text/javascript">
+
+	function login(){
+		alert("login");
+		uexMDM.login();
+		//uexWidget.loadApp("android.intent.action.VIEW","application/vnd.android.package-archive","file:///sdcard/download/AndroidTerm.apk");
+	}
+	
+	function setPushState(state){
+		uexWidget.setPushState(state);
+	  }
+      function getPushState(){
+		uexWidget.getPushState();
+	  }
+      function setPushInfo(){
+		uexWidget.setPushInfo('123','zyp');
+	  }
+      function getPushInfo(){
+		uexWidget.getPushInfo();
+	  }
+	window.uexOnload = function(type) {
+		uexWidget.cbGetPushInfo = function(opCode,dataType,data){
+			alert(data);
+		}
+		uexWidget.cbGetPushState = function(opId, dataType, data){
+			alert(data);
+		}
+		uexMDM.cbLogin=function(opId,dataType,data){
+			//登录成功才会被执行
+			alert("MDM 登陆成功，data=="+data);
+		}
+		uexMDM.cbOnCrossChanged=function(opId,dataType,data){
+			alert("MDM 越狱检测，isRootCode："+opId+" 服务器返回的提示语："+data);
+		}
+	}
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uexMDM</div>
+	<div class="conbor">
+		<div class="consj">
+		
+			<span>1.MDM Login</span>
+
+			<input class="btn" type="button" value="login" onclick="login();"><br><br>
+			
+			<span>2.推送接口</span>
+			
+			<input class="btn" type="button" value="开启推送" onclick=setPushState("1")><br>
+			<input class="btn" type="button" value="关闭推送" onclick=setPushState("0")><br>
+			<input class="btn" type="button" value="getPushState" onclick=getPushState()><br>
+			<input class="btn" type="button" value="setPushInfo" onclick=setPushInfo()><br>
+			<input class="btn" type="button" value="getPushInfo" onclick=getPushInfo()><br>
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript">
+
+	window.uexOnload = function(type){
+		console.log("uexOnload");
+		if(type == 0){  
+			uexWPSEdit.cbFileSavePath=function(opId,dataType,savePath){
+				console.log("cbFileSavePath: "+savePath);
+				alert("cbFileSavePath: "+savePath);
+			}
+		}
+	}
+	
+	function openWPS(){
+		var docFilePath = "/sdcard/Documents/doc1.doc";
+
+		//uexWPSEdit.open(path);
+		
+		//uexWPSEdit.cbFileSavePath = cbFileSavePath;
+        //var docFilePath = document.getElementById('docPath').value;//文件路径
+        var isCanEdit = '1';//0代表只读，1代表能编辑
+        var isCryptFile = 'YES';//YES是加密文件,NO不是加密文件
+        var key = '884b2fbc1397c37a4f6fe951aa19679d';//32位密钥
+        var fileFormat = 'doc';//文件格式doc,docx,ppt,xlsx,xls
+//        var key = '419514bd349b4cf8810246e3670bbe61';
+        var jsonData = '你好';
+        //打开需要编辑的文件
+        uexWPSEdit.open(docFilePath,isCanEdit,isCryptFile,key,fileFormat,jsonData);
+	}
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uexDemo对象</div>
+	<div class="conbor">
+		<div class="consj">
+		
+			<span>WPS插件open接口</span>
+			<div class="tcxx" id="f1">
+				此接口将打开一个WPSpro版用于编辑传入的文档，并在保存文件后回调保存路径。
+			</div>
+			<input class="btn" type="button" value="Open" onclick="openWPS();"><br><br>
+			
+		</div>
+	</div>
+</body>
+</html>

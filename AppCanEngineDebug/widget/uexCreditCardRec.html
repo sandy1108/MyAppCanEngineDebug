@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<script type="text/javascript">
+	
+		window.uexOnload = function() {
+			//回调
+	        uexCreditCardRec.callBackCreditCard = function(number,date,cvv){
+	            alert("卡号："+number+",期限："+date+",cvv："+cvv);
+	        }
+		}
+	
+		function openCreditCardRec(token){
+			uexCreditCardRec.openCreditCardRec(token);
+		}
+		
+	</script>
+</head>
+
+<body>
+	<div class="tit">uexCreditCardRec对象</div>
+	<div class="conbor">
+		<div class="consj">
+			<input class="btn" type="button" value="打开识别" onclick="openCreditCardRec('f06a7eca39134918a18dc4d7c45ee49f')"><br>
+		</div>
+	</div>
+</body>
+</html>

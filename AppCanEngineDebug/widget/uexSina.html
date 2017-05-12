@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport"
+        content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/zy_control.js">
+    </script>
+    <script src="js/zy_click.js">
+    </script>
+    <script type="text/javascript">
+		var cText = 0;
+var cJson = 1;
+var cInt = 2;
+    
+	window.uexOnload = function(){
+        uexSina.cbShare=function(opCode,dataType,data){
+		   alert("cbShare:"+data);
+		   document.getElementById("showStatus").innerHTML = "返回分享状态码:"+data;
+		};
+		
+		uexSina.registerCallBack = function(opCode,dataType,data){
+		   alert(opCode+"/"+dataType+"/"+data);
+		   
+		}
+		
+		uexSina.cbLogin = function(opCode,dataType,data) {
+			document.getElementById("selectItem").innerHTML = data;
+		}
+		
+		uexSina.cbGetUserInfo=function(opCode,dataType,data){
+		   alert(data);
+		};
+		
+		uexSina.cbGenerateShortUrl=function(opCode,dataType,data){
+		   alert(data);
+		};
+		
+	}
+	
+	function login() {
+		var appKey = "1118691550";
+        var registerUrl = "http://www.sina.com";
+        //uexSina.login(appKey,registerUrl);
+        uexSina.login("3238873984",registerUrl);
+	}
+	
+    function shareText(){
+        //分享文字
+        var txt = "我分享了http://music.sina.com.cn/yueku/i/2850305.html";
+        uexSina.sendTextContent(txt);
+    }
+	function sharePic(){
+        var content = "中国最大的移动中间平台AppCan对新浪微博分享的图片支持测试";
+        var realImgPath = "res://sotower.png";//http:// 本地
+        uexSina.sendImageContent(realImgPath,content);
+    }
+    function register(){
+        var appKey = "1118691550";
+        var appSecret = "dd29e3f6e21e03570295bedbca5eb7eb";
+        var registerUrl = "http://www.sina.com";
+       // uexSina.registerApp(appKey,appSecret,registerUrl);
+       // uexSina.registerApp("556039682","2f5acd0e39889f9965c86c743afdda04","http://www.3g2win.com/");
+        uexSina.registerApp("3238873984","b0399d6d982c299f26e8f09da46b6cdf","http://www.sina.com");
+    }
+    function GetUserInfo(){
+    	 var json ="{'uid':'5726377081','access_token':'2.00fQSXPGyEzLXDa060dad8c7fDuscD','app_key':'3238873984'}";
+    	 //var json ="{'uid':'2647735121','access_token':'2.00LrcLtCZ2vlnB41ca361303zw_yFB','app_key':'3238873984'}";
+        uexSina.getUserInfo(json);
+    }
+    
+    function shortUrl(){
+        var json ="{'access_token':'2.00fQSXPGyEzLXDa060dad8c7fDuscD','app_key':'3238873984','url_longs':['http://www.baidu.com','http://www.sina.com.cn','http://www.qq.com']}";
+        uexSina.generateShortUrl(json);
+    }
+		</script>
+  </head>
+<body class="um-vp " ontouchstart>
+	<div class="conbor">
+		<div class="consj">
+			<span>1.注册app id</span>
+			<input class="btn" type="button" value="注册App" onclick="register();">
+			<input class="btn" type="button" value="login" onclick="login();">
+			<div class="tcxx" id="selectItem"></div><br>
+            <span>2.分享文字</span>
+            <input class="btn" type="button" value="分享文本" onclick="shareText();"><br>
+            <span>3.分享图片，以及文字，如果图片地址为http://则必须在新浪申请高级权限</span>
+            <input class="btn" type="button" value="分享图片" onclick="sharePic();">
+            <div class="tcxx" id="showStatus"></div><br>
+			<br>		
+			<span>4.用户信息</span>
+            <input class="btn" type="button" value="用户信息" onclick="GetUserInfo();"><br>
+            <span>5.长链转短链</span>
+            <input class="btn" type="button" value="获取短链接" onclick="shortUrl();"><br>
+		</div>
+	</div>
+</body>
+<script>
+
+</script>
+</html>

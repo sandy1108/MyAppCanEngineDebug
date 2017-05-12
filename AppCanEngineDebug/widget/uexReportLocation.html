@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<script type="text/javascript">
+
+	window.uexOnload = function(type){
+		uexReportLocation.cbCoordinateToAddress = function(opCode,dataType,data)
+         {
+            alert("cbCoordinateToAddress==="+data);
+         }
+		uexReportLocation.cbAddressToCoordinate = function(opCode,dataType,data)
+        {
+            alert("cbAddressToCoordinate==="+data);
+        }
+        
+        uexReportLocation.cbOpenGeoFencing = function(opCode,dataType,data){
+            alert("cbOpenGeoFencing==="+data);
+        }
+        
+        uexWidget.onResume = function(){
+        }
+	}
+	//打开上报
+	function openReportLocation(){
+        var time = '5';
+        var reportUrl = 'http://bodu01.duapp.com/';
+        var isBackgroundReport = '1';
+        var user = 'A';
+		uexReportLocation.open(time, reportUrl, isBackgroundReport, user);
+	}
+	//打开上报
+	function openReportLocation2(){
+        var time = '5';
+        var reportUrl = 'http://appagent.csrzic.com:10181/10000000/public/shouhoufuwutest/pgdaddgps';
+        var isBackgroundReport = '0';
+        var user = 'zyp';
+		uexReportLocation.open(time, reportUrl, isBackgroundReport, user);
+	}
+	//打开上报
+	function openReportLocation3(){
+        var time = '["17:16","17:15","17:14"]';
+        var reportUrl = 'http://appagent.csrzic.com:10181/10000000/public/shouhoufuwutest/pgdaddgps';
+        var isBackgroundReport = '0';
+        var user = 'zyp';
+        var type = '0';
+		uexReportLocation.open(time, reportUrl, isBackgroundReport, user, type);
+	}
+	
+	//Get获取手势键盘内部保存的字符串数据
+	function coordinateToAddress(){
+<!--        var latitude = '39.983672';-->
+<!--        var longitude = '116.317597';--> //对应 北京市海淀区海淀中街15号
+        var latitude = '39.983694';
+        var longitude = '116.317419';
+		uexReportLocation.coordinateToAddress(latitude,longitude);
+	}
+	
+	//Set存取手势键盘内部保存的字符串数据
+	function addressToCoordinate(){
+        var address = '北京市海淀区海淀中街15号';
+		uexReportLocation.addressToCoordinate(address);
+	}
+	
+	//重新绘制手势密码
+	//function lock(){
+		
+		//uexLockPattern.lock();
+	//}
+	//关闭手势密码
+    function openGeoFencing(){
+    
+    	var opId = document.getElementById("geofenceID").value;
+        var latitude = '39.983694';
+        var longitude = '116.317419';
+        var reportUrl = 'http://bodu01.duapp.com/';
+        var range = '5';
+        var user = '11111';
+        
+		uexReportLocation.openGeoFencing(opId,latitude,longitude,reportUrl,range,user);
+	}
+	
+	function closeLocation(){
+		uexReportLocation.close();
+	}
+
+	function closeGeoFencing(){
+		uexReportLocation.closeGeoFencing();
+	}
+	//////////////////////////////
+	
+    function initBle() {
+        
+        uexReportLocation.cbInitBle = function (a,b,c){
+        	
+            alert("cbInitBle"+"=="+c);
+            
+        }
+        
+        uexReportLocation.initBle();
+        
+    }
+    
+    function scanBle() {
+        
+        uexReportLocation.onDiscoverDevices = function (a,b,c){
+            
+            alert("onDiscoverDevices"+"=="+c);
+            
+        }
+        
+        uexReportLocation.cbStartDiscoverDevice = function (a,b,c){
+            
+            alert("cbStartDiscoverDevice"+"=="+c);
+            
+        }
+        
+        uexReportLocation.startDiscoverDevice();
+        
+    }
+    
+    function linkBle() {
+        
+        uexReportLocation.onConnectStateChanged = function (a,b,c){
+            
+            alert("onConnectStateChanged"+"=="+c);
+            
+        }
+        
+        //uexReportLocation.connectDevice("3BD56C6A-2B19-5579-58A9-5D5DED2C3E19");
+        uexReportLocation.connectDevice("D0:39:72:A0:3D:EB");
+        
+    }
+    
+    function breakBle() {
+        
+        uexReportLocation.disconnectDevice();
+        
+    }
+    
+    function readBle() {
+        
+        uexReportLocation.onDataRead = function (a,b,c) {
+            
+            alert("onDataRead"+"=="+c);
+            
+        }
+        
+        uexReportLocation.readData("DFB0","DFB1");
+        
+    }
+    
+    function writeBle() {
+        
+        uexReportLocation.onDataWrite = function (a,b,c) {
+            
+            alert("onDataWrite"+"=="+c);
+            
+        }
+        
+        uexReportLocation.writeData("DFB0","DFB1","123");
+        
+    }
+    
+    function setReportExtend(){
+        
+        uexReportLocation.setReportExtend("777","888");
+        
+    }
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uexReportLocation对象</div>
+	<div class="conbor">
+		<div class="consj">
+			<span>1.打开定位上报功能</span> <input class="btn" type="button"
+				value="openReportLocation" onclick="openReportLocation();"><br>
+			<br>
+		</div>
+
+		<span>1.打开定位上报功能(更换user)</span> <input class="btn" type="button"
+			value="openReportLocation" onclick="openReportLocation2();"><br>
+		<br> <span>1.打开定位上报功能(定时刻表上报)</span> <input class="btn"
+			type="button" value="openReportLocation"
+			onclick="openReportLocation3();"><br> <br>
+
+		<div class="consj">
+			<span>2.经纬度转换为地址信息</span> <input class="btn" type="button"
+				value="coordinateToAddress" onclick="coordinateToAddress();"><br>
+			<br>
+		</div>
+
+		<div class="consj">
+			<span>3.地址信息转换为经纬度</span> <input class="btn" type="button"
+				value="addressToCoordinate" onclick="addressToCoordinate();"><br>
+			<br>
+		</div>
+
+		<div class="consj">
+			<span>4.关闭上报定位功能</span> <input class="btn" type="button"
+				value="close" onclick="closeLocation();"><br> <br>
+		</div>
+
+		<div class="consj">
+			<span>5.打开地理围栏</span> <input type="textbox" value="geofence1"
+				id="geofenceID"> <input class="btn" type="button"
+				value="openGeoFencing" onclick="openGeoFencing();"><br>
+			<br>
+		</div>
+
+		<div class="consj">
+			<span>5.关闭地理围栏</span> <input class="btn" type="button"
+				value="closeGeoFencing" onclick="closeGeoFencing();"><br>
+			<br>
+		</div>
+		<div class="consj">
+			<span>6.1.初始化蓝牙</span> <input class="btn" type="button"
+				value="initBle" onclick="initBle();"><br> <br>
+		</div>
+		<div class="consj">
+			<span>6.2.扫描设备</span> <input class="btn" type="button" value="scan"
+				onclick="scanBle();"><br> <br>
+		</div>
+		<div class="consj">
+			<span>6.3.链接设备</span> <input class="btn" type="button" value="link"
+				onclick="linkBle();"><br> <br>
+		</div>
+		<div class="consj">
+			<span>6.4.断开链接</span> <input class="btn" type="button" value="break"
+				onclick="breakBle();"><br> <br>
+		</div>
+		<div class="consj">
+			<span>6.5.读取数据</span> <input class="btn" type="button" value="read"
+				onclick="readBle();"><br> <br>
+		</div>
+		<div class="consj">
+			<span>6.6.写入数据</span> <input class="btn" type="button" value="write"
+				onclick="writeBle();"><br> <br>
+		</div>
+
+		<div class="tcxx" id="show"></div>
+		<br>
+	</div>
+</body>
+</html>

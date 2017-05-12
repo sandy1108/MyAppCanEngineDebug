@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/main.js"></script>
+    <script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+    <script type="text/javascript">
+
+    window.uexOnload = function(type){
+        
+        uexImageTag.cbSaveImage = function(opCode,dataType,data){
+            alert(data);
+        }
+    }
+    
+    function CreatImageTag() {
+        
+        alert("--- ImageTag---");
+        var x = 600;
+        var y = 600;
+        var width = 375;
+        var height = 500;
+        
+        //var image = "res://image.png";
+        var image = "res://image1.jpg";
+        //var image = "file://storage/emulated/0/ueximagetag/20151105022151.png"
+          
+         // uexImageTag.open(x,y,width,height,image);
+          uexImageTag.open(60,120,600,800,image);
+    }
+    function saveImageTag(){
+    
+    uexImageTag.save ();
+    
+    }
+    
+    </script>
+</head>
+  
+<body>
+      <div class="tit">uexImageTag插件</div>
+      <div class="conbor">
+          <div class="consj">
+          <br>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+              <span>图片标记:</span>
+              <input class="btn"  type="button" value="uexImageTag" onClick="CreatImageTag()">
+                  
+                  
+                   <input class="btn"  type="button" value="saveImageTag" onClick="saveImageTag()">
+                      
+                  
+            </div>
+          </div>
+      </div>
+  </body>
+<script>
+
+</script>
+</html>
+
+

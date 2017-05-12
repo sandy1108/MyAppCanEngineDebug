@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<script type="text/javascript">
+
+	window.uexOnload = function(type){
+    if (!type) {
+       
+    }
+	uexVeCo.onItemSelected = function(opId,dataType,data){
+		var data = JSON.parse(data);
+		if(data.itermId == '123' || data.itermId == '127'){
+		//uexVeCo.close();
+			openNewWin('audit_information','audit_information.html','0');
+		}else if(data.itermId == '125' || data.itermId == '125'){
+		//uexVeCo.close();
+			openNewWin('audit_information','audit_information.html','10');
+		}else if(data.itermId == '126'){
+		//uexVeCo.close();
+			openNewWin('audit_information','audit_information.html','10');
+		}
+		uexVeCo.close();
+    }
+	vecoOpen();
+}
+function vecoOpen(){
+	uexVeCo.close();
+    var jsonStr = '[{"date":"2014-4-25","time":"16:24:10","name":"76公文名称","project":"刘鹏","index":"1","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"1","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"0","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"1","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"0","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>二期4#5#1","project":"2014-03-01","index":"1","itermId":"124","icon":"res://2.png"},{"date":"2014-2-15","name":"万科蓝山>一期4#5#1","project":"2014-03-01","index":"1","itermId":"125","icon":"res://3.png"},{"date":"","name":"万科蓝山>二期4#5#1","project":"2014-03-01","index":"2","itermId":"126","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"0","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"1","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"0","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"1","itermId":"123","icon":"res://1.png"},{"date":"2014-2-15","time":"18:00","name":"万科蓝山>一期4#5#1","project":"当前流程节点名称","index":"1","itermId":"123","icon":"res://1.png"}]';
+	//0是左显示，1是右显示。2代表完成
+	var x=0;
+    //var y=$$("header").offsetHeight+$$("content1").offsetHeight;
+    var y=0;
+  	var w=320;
+  	//var w=int(s.width);
+    //var h=$$("content").offsetHeight-$$("content1").offsetHeight;;
+    var h=480;
+//	alert(x+" "+y+" "+w+" "+h);
+    uexVeCo.open(0,y,w,h,jsonStr);
+}
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uexVeCo对象</div>
+	<div class="conbor">
+		<div class="consj">
+		
+			<input class="btn" type="button" value="打开时间轴" onclick="vecoOpen();"><br><br>
+			<input class="btn" type="button" value="关闭时间轴" onclick="uexVeCo.close();"><br><br>
+			<div class="con">
+
+			<a href ="index.html">效果页面</a>
+		
+			</div>
+		</div>
+	</div>
+</body>
+</html>
