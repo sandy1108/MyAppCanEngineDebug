@@ -60,8 +60,6 @@
 		6CC60442157DCC0F00A3E13E /* Beqtucontent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC60441157DCC0F00A3E13E /* Beqtucontent.m */; };
 		B2403BF51833923A002530F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2403BF71833923A002530F6 /* Localizable.strings */; };
 		DE9F08231A5FD6460055FD61 /* CBSchemesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE9F08221A5FD6460055FD61 /* CBSchemesList.plist */; };
-		E8BF63821EBD984100FE850F /* uexDataAnalysis.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8305F7B1EBD949300769301 /* uexDataAnalysis.bundle */; };
-		E8BF63831EBD984800FE850F /* libuexDataAnalysis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8305F791EBD949300769301 /* libuexDataAnalysis.a */; };
 		E8BF63841EBDB24200FE850F /* AppCanEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F01E4B034600B4C626 /* AppCanEngine.framework */; };
 		E8BF63851EBDB24200FE850F /* AppCanEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F01E4B034600B4C626 /* AppCanEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8BF63861EBDB24200FE850F /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F91E4B034600B4C626 /* AppCanKit.framework */; };
@@ -70,37 +68,25 @@
 		E8BF63891EBDB24200FE850F /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F31E4B034600B4C626 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8BF638A1EBDB24200FE850F /* Ono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F61E4B034600B4C626 /* Ono.framework */; };
 		E8BF638B1EBDB24200FE850F /* Ono.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F70F61E4B034600B4C626 /* Ono.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E3A6E81FC6B2B000FEB8EE /* libuexNBSAppAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3A6E01FC6B01F00FEB8EE /* libuexNBSAppAgent.a */; };
+		E8E3A6EB1FC6B35100FEB8EE /* tingyunApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3A6EA1FC6B35100FEB8EE /* tingyunApp.framework */; };
 		F72F4A241986243F008FB4E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC60367157DCCEF00A3E13E /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E8305F781EBD949300769301 /* PBXContainerItemProxy */ = {
+		E8E3A6DF1FC6B01F00FEB8EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */;
+			containerPortal = E8E3A6DB1FC6B01F00FEB8EE /* EUExNBSAppAgent.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 2D6215221B8AEB190075325A;
-			remoteInfo = EUExDataAnalysis;
+			remoteGlobalIDString = D00014241A4D5A3800BA5E55;
+			remoteInfo = EUExNBSAppAgent;
 		};
-		E8305F7A1EBD949300769301 /* PBXContainerItemProxy */ = {
+		E8E3A6E31FC6B11000FEB8EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 76F106031BD0EA030064CDD1;
-			remoteInfo = uexDataAnalysisBundle;
-		};
-		E8BF637C1EBD983200FE850F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */;
+			containerPortal = E8E3A6DB1FC6B01F00FEB8EE /* EUExNBSAppAgent.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2D6215211B8AEB190075325A;
-			remoteInfo = EUExDataAnalysis;
-		};
-		E8BF63801EBD983500FE850F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 76F106021BD0EA030064CDD1;
-			remoteInfo = uexDataAnalysisBundle;
+			remoteGlobalIDString = D00014231A4D5A3800BA5E55;
+			remoteInfo = EUExNBSAppAgent;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -192,8 +178,9 @@
 		DE94A2D818F7CE12000CA6E7 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		DE94A2DA18F7CE48000CA6E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE9F08221A5FD6460055FD61 /* CBSchemesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBSchemesList.plist; sourceTree = "<group>"; };
-		E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EUExDataAnalysis.xcodeproj; path = ../../Git_AppCan/iOS/uexDataAnalysis_v4/EUExDataAnalysis/EUExDataAnalysis.xcodeproj; sourceTree = "<group>"; };
 		E8BF638D1EBDB26D00FE850F /* MyAppCanEngineDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyAppCanEngineDebug.entitlements; sourceTree = "<group>"; };
+		E8E3A6DB1FC6B01F00FEB8EE /* EUExNBSAppAgent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EUExNBSAppAgent.xcodeproj; path = ../../Git_AppCan/iOS/uexNBSAppAgent/EUExNBSAppAgent/EUExNBSAppAgent.xcodeproj; sourceTree = "<group>"; };
+		E8E3A6EA1FC6B35100FEB8EE /* tingyunApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = tingyunApp.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8BF63831EBD984800FE850F /* libuexDataAnalysis.a in Frameworks */,
+				E8E3A6E81FC6B2B000FEB8EE /* libuexNBSAppAgent.a in Frameworks */,
 				42D96D4B1DAB7B69001ABB17 /* VideoToolbox.framework in Frameworks */,
 				6CC60376157DCCEF00A3E13E /* AudioToolbox.framework in Frameworks */,
 				42F6E8E41C5749E70073C6E0 /* JavaScriptCore.framework in Frameworks */,
@@ -218,6 +205,7 @@
 				420041831BABCD27000A57F5 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F72F4A241986243F008FB4E6 /* UIKit.framework in Frameworks */,
 				420F71051E4B052700B4C626 /* Foundation.framework in Frameworks */,
+				E8E3A6EB1FC6B35100FEB8EE /* tingyunApp.framework in Frameworks */,
 				420F71041E4B052700B4C626 /* QuickLook.framework in Frameworks */,
 				E8BF63861EBDB24200FE850F /* AppCanKit.framework in Frameworks */,
 				420F71031E4B052700B4C626 /* ImageIO.framework in Frameworks */,
@@ -262,8 +250,9 @@
 		6CC60326157DCC0F00A3E13E = {
 			isa = PBXGroup;
 			children = (
+				E8E3A6EA1FC6B35100FEB8EE /* tingyunApp.framework */,
+				E8E3A6DB1FC6B01F00FEB8EE /* EUExNBSAppAgent.xcodeproj */,
 				E8BF638D1EBDB26D00FE850F /* MyAppCanEngineDebug.entitlements */,
-				E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */,
 				B2403BF71833923A002530F6 /* Localizable.strings */,
 				6CC6033B157DCC0F00A3E13E /* AppCanEngineDebug */,
 				6CC60334157DCC0F00A3E13E /* Frameworks */,
@@ -383,11 +372,10 @@
 			path = uexLib;
 			sourceTree = "<group>";
 		};
-		E8305F741EBD949300769301 /* Products */ = {
+		E8E3A6DC1FC6B01F00FEB8EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8305F791EBD949300769301 /* libuexDataAnalysis.a */,
-				E8305F7B1EBD949300769301 /* uexDataAnalysis.bundle */,
+				E8E3A6E01FC6B01F00FEB8EE /* libuexNBSAppAgent.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -408,8 +396,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E8BF63811EBD983500FE850F /* PBXTargetDependency */,
-				E8BF637D1EBD983200FE850F /* PBXTargetDependency */,
+				E8E3A6E41FC6B11000FEB8EE /* PBXTargetDependency */,
 			);
 			name = MyAppCanEngineDebug;
 			productName = AppCanEngineDebug;
@@ -426,7 +413,7 @@
 				ORGANIZATIONNAME = zywx;
 				TargetAttributes = {
 					6CC60330157DCC0F00A3E13E = {
-						DevelopmentTeam = B3LKFUVVE5;
+						DevelopmentTeam = 58233P998V;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -452,8 +439,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E8305F741EBD949300769301 /* Products */;
-					ProjectRef = E8305F731EBD949300769301 /* EUExDataAnalysis.xcodeproj */;
+					ProductGroup = E8E3A6DC1FC6B01F00FEB8EE /* Products */;
+					ProjectRef = E8E3A6DB1FC6B01F00FEB8EE /* EUExNBSAppAgent.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -464,18 +451,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E8305F791EBD949300769301 /* libuexDataAnalysis.a */ = {
+		E8E3A6E01FC6B01F00FEB8EE /* libuexNBSAppAgent.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libuexDataAnalysis.a;
-			remoteRef = E8305F781EBD949300769301 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E8305F7B1EBD949300769301 /* uexDataAnalysis.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = uexDataAnalysis.bundle;
-			remoteRef = E8305F7A1EBD949300769301 /* PBXContainerItemProxy */;
+			path = libuexNBSAppAgent.a;
+			remoteRef = E8E3A6DF1FC6B01F00FEB8EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -495,7 +475,6 @@
 				3C81BA991A4AA29F00C4B7C1 /* Image.xcassets in Resources */,
 				42D0AF461BBB879C002249AE /* AppCanEngineLocalization.strings in Resources */,
 				B2403BF51833923A002530F6 /* Localizable.strings in Resources */,
-				E8BF63821EBD984100FE850F /* uexDataAnalysis.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,15 +511,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E8BF637D1EBD983200FE850F /* PBXTargetDependency */ = {
+		E8E3A6E41FC6B11000FEB8EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = EUExDataAnalysis;
-			targetProxy = E8BF637C1EBD983200FE850F /* PBXContainerItemProxy */;
-		};
-		E8BF63811EBD983500FE850F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = uexDataAnalysisBundle;
-			targetProxy = E8BF63801EBD983500FE850F /* PBXContainerItemProxy */;
+			name = EUExNBSAppAgent;
+			targetProxy = E8E3A6E31FC6B11000FEB8EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -591,6 +565,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -633,6 +608,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -661,11 +637,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = B3LKFUVVE5;
+				DEVELOPMENT_TEAM = 58233P998V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AppCanEngineDebug/uexFrameworks\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -676,7 +653,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/AppCanEngineDebug/uexLib\"";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.engine.debug4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.zymobi.engine.debug4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -694,11 +671,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = B3LKFUVVE5;
+				DEVELOPMENT_TEAM = 58233P998V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AppCanEngineDebug/uexFrameworks\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -709,7 +687,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/AppCanEngineDebug/uexLib\"";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.engine.debug4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.zymobi.engine.debug4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -734,6 +712,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -763,11 +742,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = B3LKFUVVE5;
+				DEVELOPMENT_TEAM = 58233P998V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AppCanEngineDebug/uexFrameworks\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -778,7 +758,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/AppCanEngineDebug/uexLib\"";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.engine.debug4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wsgh.zymobi.engine.debug4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
